@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# State Management Application using Context API & Redux Pattern
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Project Overview
 
-## Available Scripts
+This project demonstrates **modern state management techniques in React** by combining **Context API** and a **Redux-style state management pattern** to build a scalable, role-based application.
 
-In the project directory, you can run:
+The application focuses on:
+- Authentication management using Context API
+- Product and cart state management using Redux principles
+- Role-based access control (Admin vs Normal User)
+- Clean separation of concerns between global UI state and business logic
 
-### `npm start`
+This project is designed to meet **academic requirements** while also following **industry best practices**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎯 Objectives
 
-### `npm test`
+- To understand and implement **Context API** for global authentication state
+- To manage complex application data using **Redux principles**
+- To demonstrate **role-based UI rendering**
+- To build a maintainable and scalable React application
+- To apply theoretical concepts of state management in a practical project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Technologies & Tools Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- **React.js**
+- **JavaScript (ES6+)**
+- **HTML5**
+- **CSS3**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### State Management
+- **React Context API** – Authentication & user session
+- **Redux-style architecture** using:
+  - `useReducer`
+  - Actions & reducers
+  - Centralized state updates
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Development Tools
+- **VS Code**
+- **Git & GitHub**
+- **Netlify (Deployment)**
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧩 Application Architecture
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application follows a **hybrid state management approach**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1️⃣ Context API (Authentication Layer)
+Used for:
+- Login / Logout
+- User session management
+- Role handling (Admin / User)
+- Token handling
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2️⃣ Redux Pattern (Business Logic Layer)
+Used for:
+- Product catalog management
+- Shopping cart state
+- Predictable and scalable state updates
 
-## Learn More
+This separation ensures:
+- Minimal re-renders
+- Clean code structure
+- Easy debugging and extension
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔐 Authentication Module (Context API)
 
-### Code Splitting
+### Managed State:
+- `isLoggedIn`
+- `userName`
+- `role`
+- `token`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Functions:
+- `login()` – Authenticates user and sets global state
+- `logout()` – Clears authentication state
 
-### Analyzing the Bundle Size
+### Why Context API?
+- Lightweight
+- Ideal for global UI-related state
+- Eliminates prop drilling
+- Easy to maintain
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📦 Product Management Module (Redux Pattern)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Product Features:
+- Add product
+- Update product
+- Remove product
+- Display product list
 
-### Advanced Configuration
+### Cart Features:
+- Add item to cart
+- Update item quantity
+- Remove item
+- Clear cart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Why Redux Pattern?
+- Predictable state changes
+- Centralized business logic
+- Scalable for large applications
+- Clear action-based updates
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 👥 Role-Based Access Control
 
-### `npm run build` fails to minify
+### Admin User
+- Add new products
+- Update existing products
+- Delete products
+- Full product management access
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Normal User
+- View products
+- Add products to cart
+- Manage cart items
+
+This is implemented using **conditional rendering** based on the role stored in `AuthContext`.
+
+---
+
+## 🖥️ User Interface Highlights
+
+- Clean and responsive UI
+- Gradient-based modern design
+- Card-style layout
+- User-friendly login screen
+- Role-specific dashboard behavior
+
+---
+
+## 🗂️ Project Folder Structure
+
